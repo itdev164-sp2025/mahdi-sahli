@@ -3,13 +3,16 @@
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
   siteMetadata: {
-    title: `My Gatsby Site`,
+    title: ` Gatsby blog`,
     description: ``,
     author: `Mahdi Sahli`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
@@ -23,8 +26,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        spaceId: "cyj6h0jynwg4",
-        accessToken: "5b09CgPswxWPVwCVjwCU3EsElC2uox7h9DJn_JA4kXU",
+        spaceId: process.env.SPACE_ID,
+        accessToken:process.env.ACCESS_TOKEN ,
       },
     },
     `gatsby-plugin-image`,
@@ -35,6 +38,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
