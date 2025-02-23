@@ -8,11 +8,13 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background:${props=> props.theme.Header.backroundColor}
 `;
 
 const StyledLink = styled(Link)`
   font-size: var(--font-sm);
   text-decoration: none;
+  color:${props=> props.theme.Header.color}
 `;
 
 const Header = ({ siteTitle }) => (
