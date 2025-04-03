@@ -9,7 +9,8 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
 import { Gray } from "./themes/Gray";
-import Header from "./header";
+import { Header } from "../components/Header";
+
 import "./layout.css";
 import { Gray } from "./themes/Gray";
 
