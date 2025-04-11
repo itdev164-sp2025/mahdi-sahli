@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { BaseContainer } from "../BaseContainer";
+import { H1 } from "../Heading";        
+import Section from "../Section";       
 
 const StyledHeader = styled(BaseContainer).attrs({ as: "header" })`
   margin: 0 auto;
@@ -20,6 +22,13 @@ const StyledLink = styled(Link)`
 
 export const Header = ({ siteTitle }) => (
   <StyledHeader>
-    <StyledLink to="/">{siteTitle || "My Styled Blog"}</StyledLink>
+    <Section width={11 / 12}>
+      <H1>
+        <StyledLink to="/">{siteTitle || "My Styled Blog"}</StyledLink>
+      </H1>
+    </Section>
+    <Section width={1 / 12}>
+      Search
+    </Section>
   </StyledHeader>
 );
