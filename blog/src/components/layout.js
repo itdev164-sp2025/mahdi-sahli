@@ -10,7 +10,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
 import { Gray } from "./themes/Gray";
 import { Header } from "../components/Header";
-
+import Main from "./Main";
+import Footer from "./Footer";
 import "./layout.css";
 import { Gray } from "./themes/Gray";
 
