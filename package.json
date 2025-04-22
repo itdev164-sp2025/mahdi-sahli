@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "rebass": "^3.0.0-12"
+    "rebass": "^3.0.0-12",
+    "styled-icons": "^10.47.1"
   }
 }
