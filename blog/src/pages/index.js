@@ -3,6 +3,8 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import * as styles from "../components/index.module.css";
+import BigIconButton from "../components/BigIconButton";
+import { MdInfoOutline } from "react-icons/md";
 
 export const query = graphql`
   query {
@@ -30,18 +32,26 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <h1>Blog Posts</h1>
-      <div className={styles.blogList}>
-        {posts.map((post) => (
-          <article key={post.slug} className={styles.blogPost}>
-            <h2>
-              <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-            </h2>
-            <p>{post.body ? `${post.body.substring(0, 150)}...` : "No excerpt available."}</p>
-          </article>
-        ))}
-      </div>
-    </Layout>
+  <h1>Blog Posts</h1>
+
+  <BigIconButton
+    icon={MdInfoOutline}
+    label="More Info"
+    variant="bigIconButton"
+  />
+
+  <div className={styles.blogList}>
+    {posts.map((post) => (
+      <article key={post.slug} className={styles.blogPost}>
+        <h2>
+          <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+        </h2>
+        <p>{post.body ? `${post.body.substring(0, 150)}...` : "No excerpt available."}</p>
+      </article>
+    ))}
+  </div>
+</Layout>
+
   );
 };
 

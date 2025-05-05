@@ -10,3 +10,5 @@
 exports.onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({ lang: `en` })
 }
+export { wrapRootElement } from "./gatsby-browser";
+
